@@ -11,22 +11,40 @@ class BreadthFirstSearchTest {
     @Test
     public void givenAGraphWithOneVertexShouldReturnAZeroString() {
         Graph graph = new Graph(1);
-        assertEquals("0", searchEngine.breadthFirstSearch(graph));
+        assertEquals("0", searchEngine.bfs(graph));
+    }
+
+    @Test
+    public void givenAGraphWithTwoVerticesAndAEdgesShouldReturnRightString() {
+        Graph graph = new Graph(2);
+        graph.addEdge(0, 1);
+        assertEquals("01", searchEngine.bfs(graph));
+    }
+
+    @Test
+    public void givenAGraphWithFiveVerticesShouldReturnRightString() {
+        Graph graph = new Graph(5);
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 3);
+        graph.addEdge(1, 4);
+        assertEquals("0134", searchEngine.bfs(graph));
     }
 
     @Test
     public void givenAGraphWithTwoVerticesAndTwoEdgesShouldReturnTheRightString() {
         Graph graph = new Graph(2);
         graph.addEdge(0, 1);
-        assertEquals("01", searchEngine.breadthFirstSearch(graph));
+        assertEquals("01", searchEngine.bfs(graph));
     }
 
     @Test
     public void givenAGraphWithThreeVerticesAndTwoEdgesShouldReturnTheRightString() {
-        Graph graph = new Graph(2);
+        Graph graph = new Graph(5);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
-        assertEquals("012", searchEngine.breadthFirstSearch(graph));
+        graph.addEdge(2,4);
+        graph.addEdge(2,3);
+        assertEquals("01243", searchEngine.bfs(graph));
     }
 
     @Test
@@ -36,8 +54,6 @@ class BreadthFirstSearchTest {
         graph.addEdge(0, 2);
         graph.addEdge(1, 3);
         graph.addEdge(1, 4);
-        assertEquals("01234", searchEngine.breadthFirstSearch(graph));
+        assertEquals("01234", searchEngine.bfs(graph));
     }
-
-
 }

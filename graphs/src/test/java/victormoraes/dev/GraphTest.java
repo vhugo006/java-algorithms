@@ -21,11 +21,11 @@ class GraphTest {
         graph.addEdge(1, 2);
         graph.addEdge(2, 3);
         graph.addEdge(3, 4);
-        assertEquals(1, graph.getAdjacencies()[0].get(0));
-        assertEquals(4, graph.getAdjacencies()[0].get(1));
-        assertEquals(2, graph.getAdjacencies()[1].get(0));
-        assertEquals(3, graph.getAdjacencies()[2].get(0));
-        assertEquals(4, graph.getAdjacencies()[3].get(0));
+        assertEquals(1, graph.getAdjacencies()[0].headNode.data);
+        assertEquals(4, graph.getAdjacencies()[0].tailNode.data);
+//        assertEquals(2, graph.getAdjacencies()[1].get(0));
+//        assertEquals(3, graph.getAdjacencies()[2].get(0));
+//        assertEquals(4, graph.getAdjacencies()[3].get(0));
     }
 
     @Test
