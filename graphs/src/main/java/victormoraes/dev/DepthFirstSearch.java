@@ -1,7 +1,5 @@
 package victormoraes.dev;
 
-import java.util.Objects;
-
 import static java.util.Objects.nonNull;
 
 public class DepthFirstSearch {
@@ -37,7 +35,7 @@ public class DepthFirstSearch {
 
             DoublyLinkedList<Integer>.Node node = graph.getAdjacencies()[vertice].getHeadNode();
 
-            while (nonNull(node)){
+            while (nonNull(node)) {
                 stack.push(node.data);
                 node = node.nextNode;
             }
